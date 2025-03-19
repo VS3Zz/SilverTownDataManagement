@@ -1,0 +1,357 @@
+/* Dark and Orange Theme */
+:root {
+  --dark-bg: #1a1a1a;
+  --dark-text: #ffffff;
+  --dark-secondary: #333333;
+  --orange-primary: #ff8c42;
+  --orange-secondary: #ff6f00;
+}
+
+/* Light Theme */
+body.light-theme {
+  --dark-bg: #ffffff;
+  --dark-text: #1a1a1a;
+  --dark-secondary: #f4f4f4;
+  --orange-primary: #ff8c42;
+  --orange-secondary: #ff6f00;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 100vh;
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Login Page */
+.login-container {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  background-color: var(--dark-secondary);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.login-container h1 {
+  text-align: center;
+  color: var(--orange-primary);
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-container label {
+  margin: 10px 0 5px;
+  color: var(--orange-primary);
+}
+
+.login-container input {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+.login-container button {
+  padding: 10px;
+  background-color: var(--orange-primary);
+  color: var(--dark-bg);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-container button:hover {
+  background-color: var(--orange-secondary);
+}
+
+#loginMessage {
+  color: var(--orange-primary);
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Main Dashboard */
+.container {
+  display: flex;
+  width: 100%;
+}
+
+/* Sidebar Toggle Button */
+.sidebar-toggle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 24px;
+  color: var(--orange-primary);
+  cursor: pointer;
+  z-index: 1000;
+  display: none; /* Hidden by default */
+}
+
+/* Sidebar */
+.sidebar {
+  width: 200px;
+  background-color: var(--dark-secondary);
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: -250px; /* Hidden by default */
+  height: 100vh;
+  transition: left 0.3s ease;
+  z-index: 999;
+}
+
+.sidebar.active {
+  left: 0; /* Show sidebar */
+}
+
+.sidebar h2 {
+  margin-top: 0;
+  color: var(--orange-primary);
+  font-size: 24px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+}
+
+.sidebar ul li a {
+  color: var(--dark-text);
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar ul li a i {
+  margin-right: 10px;
+  color: var(--orange-primary);
+}
+
+.sidebar ul li a:hover {
+  color: var(--orange-primary);
+}
+
+/* Show Sidebar Toggle Button on Dashboard */
+#dashboardPage .sidebar-toggle {
+  display: block;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 20px;
+  background-color: var(--dark-bg);
+  margin-left: 0; /* Adjusted for hidden sidebar */
+  transition: margin-left 0.3s ease;
+}
+
+.main-content.sidebar-active {
+  margin-left: 200px; /* Adjust when sidebar is visible */
+}
+
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+
+h1 {
+  color: var(--orange-primary);
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+h1 i {
+  margin-right: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: var(--dark-secondary);
+  color: var(--dark-text);
+}
+
+table th, table td {
+  border: 1px solid #444;
+  padding: 12px;
+  text-align: left;
+}
+
+table th {
+  background-color: var(--orange-primary);
+  color: var(--dark-bg);
+  font-weight: bold;
+}
+
+table th i {
+  margin-right: 8px;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+form label {
+  display: block;
+  margin: 10px 0 5px;
+  color: var(--orange-primary);
+  font-size: 16px;
+}
+
+form label i {
+  margin-right: 8px;
+}
+
+form input, form select, form button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--dark-secondary);
+  color: var(--dark-text);
+  font-size: 16px;
+}
+
+form input:focus, form select:focus {
+  outline: none;
+  border: 1px solid var(--orange-primary);
+}
+
+form button {
+  background-color: var(--orange-primary);
+  color: var(--dark-bg);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form button i {
+  margin-right: 8px;
+}
+
+form button:hover {
+  background-color: var(--orange-secondary);
+}
+
+#activationMessage, #loginMessage {
+  color: var(--orange-primary);
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+/* Search Bar */
+.search-bar {
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--dark-secondary);
+  color: var(--dark-text);
+  font-size: 16px;
+}
+
+.search-bar input:focus {
+  outline: none;
+  border: 1px solid var(--orange-primary);
+}
+
+/* Edit and Delete Buttons */
+.edit-button, .delete-button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-button {
+  background-color: var(--orange-primary);
+  color: var(--dark-bg);
+}
+
+.delete-button {
+  background-color: #ff4444;
+  color: var(--dark-text);
+}
+
+.edit-button:hover {
+  background-color: var(--orange-secondary);
+}
+
+.delete-button:hover {
+  background-color: #cc0000;
+}
+
+.edit-button i, .delete-button i {
+  margin-right: 5px;
+}
+
+/* Settings Page */
+#settings {
+  padding: 20px;
+}
+
+.settings-option {
+  margin-bottom: 20px;
+}
+
+.settings-option label {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: var(--dark-text);
+}
+
+.settings-option label i {
+  margin-right: 10px;
+  color: var(--orange-primary);
+}
+
+.settings-option select {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--dark-secondary);
+  color: var(--dark-text);
+  font-size: 16px;
+}
+
+.settings-option select:focus {
+  outline: none;
+  border: 1px solid var(--orange-primary);
+}
