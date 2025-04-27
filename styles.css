@@ -1,19 +1,19 @@
-/* NoPixel Inspired Theme */
+/* NoPixel Light Blue Neon Theme */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 :root {
-  --dark-bg: #0d0d0d;
-  --dark-text: #f5f5f5;
-  --dark-secondary: #1a1a1a;
-  --orange-primary: #ff8000;
-  --orange-secondary: #ff5500;
-  --border-glow: 0 0 8px rgba(255, 128, 0, 0.7);
+  --dark-bg: #0a0a0a;
+  --dark-text: #e0e0e0;
+  --dark-secondary: #121212;
+  --neon-blue: #00ffff;
+  --neon-blue-dark: #00cccc;
+  --border-glow: 0 0 10px rgba(0, 255, 255, 0.7);
 }
 
 /* Light Theme */
 body.light-theme {
   --dark-bg: #ffffff;
-  --dark-text: #1a1a1a;
+  --dark-text: #000000;
   --dark-secondary: #f0f0f0;
 }
 
@@ -32,16 +32,17 @@ body {
 .login-container {
   background-color: var(--dark-secondary);
   margin: auto;
-  padding: 30px;
+  padding: 40px;
   max-width: 400px;
-  border-radius: 12px;
+  border-radius: 0; /* Square edges */
   box-shadow: var(--border-glow);
 }
 
 .login-container h1 {
-  color: var(--orange-primary);
+  color: var(--neon-blue);
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  font-size: 28px;
 }
 
 .login-container form {
@@ -52,45 +53,45 @@ body {
 .login-container input {
   background-color: var(--dark-bg);
   color: var(--dark-text);
-  padding: 12px;
-  border: 1px solid var(--dark-secondary);
-  border-radius: 8px;
+  padding: 14px;
   margin-bottom: 15px;
-  transition: border-color 0.3s;
+  border: 2px solid #222;
+  border-radius: 0;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .login-container input:focus {
   outline: none;
-  border-color: var(--orange-primary);
+  border-color: var(--neon-blue);
   box-shadow: var(--border-glow);
 }
 
 .login-container button {
-  background-color: var(--orange-primary);
-  color: #0d0d0d;
+  background-color: var(--neon-blue);
+  color: #0a0a0a;
   border: none;
-  border-radius: 8px;
-  padding: 12px;
+  border-radius: 0;
+  padding: 14px;
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
 .login-container button:hover {
-  background-color: var(--orange-secondary);
+  background-color: var(--neon-blue-dark);
 }
 
 /* Sidebar */
 .sidebar {
   background-color: var(--dark-secondary);
-  width: 220px;
+  width: 240px;
   height: 100vh;
   position: fixed;
-  left: -240px;
+  left: -260px;
   top: 0;
   transition: left 0.3s;
-  padding: 30px 20px;
-  box-shadow: inset -2px 0 5px rgba(255, 128, 0, 0.1);
+  padding: 40px 20px;
+  box-shadow: inset -2px 0 5px rgba(0, 255, 255, 0.2);
 }
 
 .sidebar.active {
@@ -98,10 +99,9 @@ body {
 }
 
 .sidebar h2 {
-  color: var(--orange-primary);
-  margin-bottom: 30px;
+  color: var(--neon-blue);
+  margin-bottom: 40px;
   font-size: 24px;
-  font-weight: 600;
 }
 
 .sidebar ul {
@@ -123,43 +123,43 @@ body {
 }
 
 .sidebar ul li a:hover {
-  color: var(--orange-primary);
+  color: var(--neon-blue);
 }
 
 /* Main Content */
 .main-content {
   flex: 1;
-  padding: 30px;
+  padding: 40px;
   margin-left: 0;
   transition: margin-left 0.3s;
 }
 
 .main-content.sidebar-active {
-  margin-left: 220px;
+  margin-left: 240px;
 }
 
 h1, h2 {
-  color: var(--orange-primary);
+  color: var(--neon-blue);
 }
 
 /* Tables */
 table {
   width: 100%;
   background: var(--dark-secondary);
-  border-radius: 8px;
-  overflow: hidden;
   margin-top: 30px;
+  border-spacing: 0;
+  box-shadow: var(--border-glow);
 }
 
 table th, table td {
-  padding: 14px;
+  padding: 16px;
   text-align: left;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #222;
 }
 
 table th {
-  background-color: var(--orange-primary);
-  color: #0d0d0d;
+  background-color: var(--neon-blue);
+  color: #0a0a0a;
 }
 
 table tr:hover {
@@ -168,16 +168,16 @@ table tr:hover {
 
 /* Buttons */
 button, .edit-button, .delete-button {
-  padding: 10px 16px;
-  border-radius: 8px;
+  padding: 12px 16px;
   border: none;
+  border-radius: 0;
   font-weight: 600;
   cursor: pointer;
 }
 
 .edit-button {
-  background-color: var(--orange-primary);
-  color: #0d0d0d;
+  background-color: var(--neon-blue);
+  color: #0a0a0a;
 }
 
 .delete-button {
@@ -186,7 +186,7 @@ button, .edit-button, .delete-button {
 }
 
 .edit-button:hover {
-  background-color: var(--orange-secondary);
+  background-color: var(--neon-blue-dark);
 }
 
 .delete-button:hover {
@@ -196,39 +196,39 @@ button, .edit-button, .delete-button {
 /* Forms */
 form input, form select, form button {
   width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
+  padding: 14px;
+  margin-bottom: 20px;
   background: var(--dark-secondary);
   color: var(--dark-text);
-  border-radius: 8px;
-  border: 1px solid #333;
+  border: 2px solid #222;
+  border-radius: 0;
   transition: border-color 0.3s;
 }
 
 form input:focus, form select:focus {
   outline: none;
-  border-color: var(--orange-primary);
+  border-color: var(--neon-blue);
 }
 
 /* Search Bar */
 .search-bar input {
   width: 100%;
-  padding: 12px;
+  padding: 14px;
   background: var(--dark-secondary);
   color: var(--dark-text);
-  border-radius: 8px;
-  border: 1px solid #333;
+  border: 2px solid #222;
+  border-radius: 0;
 }
 
 .search-bar input:focus {
   outline: none;
-  border-color: var(--orange-primary);
+  border-color: var(--neon-blue);
 }
 
 /* Messages */
 #activationMessage, #loginMessage {
-  margin-top: 10px;
-  color: var(--orange-primary);
+  margin-top: 15px;
+  color: var(--neon-blue);
   text-align: center;
 }
 
@@ -237,8 +237,8 @@ form input:focus, form select:focus {
   position: fixed;
   top: 20px;
   left: 20px;
-  font-size: 28px;
-  color: var(--orange-primary);
+  font-size: 30px;
+  color: var(--neon-blue);
   cursor: pointer;
   z-index: 1000;
 }
